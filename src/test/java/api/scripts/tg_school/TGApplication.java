@@ -1,4 +1,4 @@
-package api.scripts.tg_application;
+package api.scripts.tg_school;
 
 import api.pojo_classes.tg_application.CreateUser;
 import api.pojo_classes.tg_application.UpdatePatchStudent;
@@ -25,7 +25,7 @@ public class TGApplication {
     @BeforeMethod
     public void setAPI() {
         baseSpec = new RequestSpecBuilder().log(LogDetail.ALL)
-                .setBaseUri(ConfigReader.getProperty("TGBaseURI"))
+                .setBaseUri(ConfigReader.getProperty("TGSchoolBaseURI"))
                 .setContentType(ContentType.JSON)
                 .build();
     }
