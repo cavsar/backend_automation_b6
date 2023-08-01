@@ -107,6 +107,8 @@ public class TGApplication {
                 .when().patch("/students/" +student_id)
                 .then().log().all().assertThat().statusCode(200)
                 .time(Matchers.lessThan(5000L))
+                .body("firstName",equalTo(updatePutStudent.getFirstName()))
+                .body("lastName",equalTo(updatePutStudent.getLastName()))
                 .body("email", equalTo(updatePatchStudent.getEmail()))
                 .body("dob", equalTo(updatePatchStudent.getDOB()))
                 .extract().response();
